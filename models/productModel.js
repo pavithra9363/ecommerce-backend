@@ -1,4 +1,5 @@
 import {  mongoose} from "mongoose";
+import fs from 'fs';
 
 const ProductSchema = new mongoose.Schema({
     name:{type:String,require:true},
@@ -46,4 +47,12 @@ const ProductSchema = new mongoose.Schema({
       date:{type:Number}
 })
 const ProductModel=mongoose.model("product",ProductSchema);
+
+
+// let insertData=async()=>{
+//   const data=JSON.parse(fs.readFileSync('product123.json','UTF8'));
+//   const result=await ProductModel.insertMany(data);
+//   console.log(result);
+// }
+// insertData();
 export default ProductModel
