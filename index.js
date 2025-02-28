@@ -14,14 +14,7 @@ const PORT=process.env.PORT||8000
 
 //MIDDLEWARE
 app.use(express.json());
-const corsOptions = {
-     origin: "https://ecommerce-frontend-one-pink.vercel.app/", // Your frontend URL
-     methods: "GET,POST,PUT,DELETE", // Allowed methods
-     credentials: true, // Allow cookies if needed
-   };
-   
- app.use(cors(corsOptions));
- 
+app.use(cors());
 connectDB();
 connectcloudinary();
 
